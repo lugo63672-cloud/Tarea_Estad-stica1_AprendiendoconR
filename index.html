@@ -10,7 +10,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<meta name="author" content="Jared Rodrigo De La Fuente Noh" />
+<meta name="author" content="Lugo Lope Luis Andrés 253722" />
 
 
 <title>Estadística</title>
@@ -157,9 +157,9 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 <div class="table cover">
 <div class="cover-card table-cell table-middle">
 <span class="author_name">Estadística</span>
-<span class="author_job">Actividad 1 - Iniciando con R</span>
-<span class="author_bio mbm">Jared Rodrigo De La Fuente Noh</span>
-<span class="author_bio mbm">4 de junio de 2026</span>
+<span class="author_job">Actividad 1 Iniciando con R</span>
+<span class="author_bio mbm">Lugo Lope Luis Andrés 253722</span>
+<span class="author_bio mbm">20 de junio de 2026</span>
 </div>
 </div>
 </div>
@@ -175,32 +175,45 @@ code span.er { color: #a61717; background-color: #e3d2d2; }
 <p>La siguiente tarea tiene como objetivo reforzar los conceptos de
 programación en lenguaje <code>R</code> que se discutieron en las
 sesiones pasadas.</p>
-<p>###Vectores atómicos</p>
+</div>
+<div id="vectores-atómicos" class="section level2">
+<h2>Vectores atómicos</h2>
 <p>En <code>R</code>, los vectores atómicos se pueden generar mediante
 diversos comandos, e.g., <code>x &lt;- c(&quot;a&quot;,&quot;char&quot;,&quot;nuevo&quot;)</code>
 representa un vector de carácteres. Basado en lo anterior cree vectores
 con las siguientes características:</p>
 <ul>
-<li>Un vector que represente <span class="math inline">\(\{2^i\}_{i=1}^{20}\)</span> v1 &lt;-
-c(2^(1:20))</li>
-<li>Un vector que represente <span class="math inline">\(\{2n+1\}_{n=4}^{13}\)</span> n &lt;- 4:13 v2 &lt;-
-c(2*n + 1)</li>
+<li>Un vector que represente <span class="math inline">\(\{2^i\}_{i=1}^{20}\)</span></li>
+<li>Un vector que represente <span class="math inline">\(\{2n+1\}_{n=4}^{13}\)</span></li>
 <li>Un vector que represente <span class="math inline">\(\{2n+1\}_{n=4}^{13} \cap
-\{2^i\}_{i=1}^{20}\)</span> v3 &lt;- c(intersect(v2, v1))</li>
+\{2^i\}_{i=1}^{20}\)</span></li>
 <li>Un vector que represente <span class="math inline">\(\{\sin(2*\pi
-t)\}_{t=1}^5\)</span> t &lt;- 1:5 v4 &lt;- c(sin(2 * pi * t))</li>
+t)\}_{t=1}^5\)</span></li>
 <li>Un vector de <span class="math inline">\(10\)</span> números
-aleatorios con distribución uniforme. v5 &lt;- c(runif(10))</li>
-<li>Un vector con las primeras 15 letras del abecedario en mayúsculas.
-v6 &lt;- c(LETTERS[1:15])</li>
+aleatorios con distribución uniforme.</li>
+<li>Un vector con las primeras 15 letras del abecedario en
+mayúsculas.</li>
 </ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">^</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>))</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">13</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">*</span>n <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>v3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">intersect</span>(v2, v1))</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>v4 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sin</span>(<span class="dv">2</span> <span class="sc">*</span> pi <span class="sc">*</span> t))</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>v5 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">runif</span>(<span class="dv">10</span>))</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>v6 <span class="ot">&lt;-</span> <span class="fu">c</span>(LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>])</span></code></pre></div>
 <p>Supóngamos ahora que se intentan generar los siguientes vectores
 atómicos:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1&quot;</span>,<span class="st">&quot;2&quot;</span>,<span class="dv">2</span><span class="sc">+</span><span class="dv">3</span><span class="dt">i</span>,<span class="dv">5</span><span class="sc">+</span><span class="dv">41</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="fu">c</span>(T,T,T,T,F))</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>x3 <span class="ot">&lt;-</span> <span class="sc">!</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">12</span>,<span class="fl">12.1</span>,<span class="dv">99</span>,<span class="dv">100</span>))</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>x4 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)<span class="sc">&lt;</span><span class="st">&quot;a&quot;</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>x5 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1&quot;</span>,<span class="st">&quot;2&quot;</span>,<span class="dv">2</span><span class="sc">+</span><span class="dv">3</span><span class="dt">i</span>,<span class="dv">5</span><span class="sc">+</span><span class="dv">41</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="fu">c</span>(T,T,T,T,F))</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>x3 <span class="ot">&lt;-</span> <span class="sc">!</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">12</span>,<span class="fl">12.1</span>,<span class="dv">99</span>,<span class="dv">100</span>))</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>x4 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)<span class="sc">&lt;</span><span class="st">&quot;a&quot;</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>x5 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span></code></pre></div>
 <p>¿De qué tipo es cada una de ellas? Liste el tipo de cada una de
 ellas.</p>
 <ul>
@@ -227,7 +240,7 @@ elementos son las letras minúsculas. m3 &lt;- matrix(letters[1:25], nrow
 elementos son valores complejos. m4 &lt;- matrix(c(1+2i, 3+4i, 5+6i,
 7+8i), nrow = 2, ncol = 2)</li>
 </ul>
-<p>Una matriz se puede generar igual mediante otros dos comando? Cuáles
+<p>Una matriz se puede generar igual mediante otros dos comandos? Cuáles
 son? + Primera forma: m_alt1 &lt;- array(1:6, dim = c(2,3)) + Segunda
 forma: v &lt;- 1:6 dim(v) &lt;- c(2,3) m_alt2 &lt;- v</p>
 </div>
@@ -236,7 +249,7 @@ forma: v &lt;- 1:6 dim(v) &lt;- c(2,3) m_alt2 &lt;- v</p>
 <p>Una lista es una generalización tanto de un vector atómico como de un
 <code>data.frame</code>. Los elementos de un vector atómico pueden ser
 de cualquier tipo. Supongamos que tenemos un lista dada por</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span>,<span class="st">&quot;a&quot;</span>,<span class="dv">2</span><span class="sc">+</span><span class="dv">3</span><span class="dt">i</span>,T,F,<span class="dv">1</span><span class="dt">L</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span>,<span class="st">&quot;a&quot;</span>,<span class="dv">2</span><span class="sc">+</span><span class="dv">3</span><span class="dt">i</span>,T,F,<span class="dv">1</span><span class="dt">L</span>)</span></code></pre></div>
 <ul>
 <li>¿Qué sucede si a la lista <code>x</code> le aplico
 <code>dim(x) &lt;- c(2,3)</code>? Se convierte en una matriz de
@@ -254,46 +267,54 @@ espacio de graficación en dos filas y dos columnas con lo cual yo
 graficar 4 gráficos sobre la misma figura. Por otro lado el comando
 <code>write(path)</code> permite escribir un archivo en la dirección
 dada por <code>path</code>, por ejemplo:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>x <span class="ot">&lt;-</span><span class="fu">rnorm</span>(<span class="dv">20</span>)   <span class="co"># Variables aleatorias con media 0 y sd 1</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">write</span>(x,<span class="st">&quot;archivo.txt&quot;</span>, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>x <span class="ot">&lt;-</span><span class="fu">rnorm</span>(<span class="dv">20</span>)   <span class="co"># Variables aleatorias con media 0 y sd 1</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">write</span>(x,<span class="st">&quot;archivo.txt&quot;</span>, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <p>Crea un archivo llamado <code>archivo.txt</code> en el directorio de
 trabajo. De igual forma <code>R</code> permite graficar en otro
 <strong>dispositivo</strong>. Por ejemplo, podemos graficar en un
 dispositivo PDF y después guardar el archivo en el directorio de trabajo
 mediante el siguiente comando:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">pdf</span>(<span class="st">&quot;jared.pdf&quot;</span>)            <span class="co"># Creamos el PDF</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">30</span>),<span class="at">type =</span> <span class="st">&quot;l&quot;</span>)  <span class="co"># Graficamos en el dispositivo</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="fu">dev.off</span>()                   <span class="co"># Finalmente cerramos el PDF</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">pdf</span>(<span class="st">&quot;LugoLuis.pdf&quot;</span>)            </span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">30</span>),<span class="at">type =</span> <span class="st">&quot;l&quot;</span>)  </span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="fu">dev.off</span>()                   </span></code></pre></div>
 <p>Con base en lo anterior se requiere que el estudiante genere 40
 archivos llamados con valores aleatorios del tipo uniforme (creados
 mediante <code>runif()</code>) y cree los archivos <code>txt</code> y
 <code>pdf</code> que contienen sus valores y sus gráficos.</p>
 </div>
+<div id="gráficos-1" class="section level3">
+<h3>Gráficos</h3>
+<p>Con base en lo anterior se requiere que el estudiante genere 40
+archivos llamados con valores aleatorios del tipo uniforme (creados
+mediante <code>runif()</code>) y cree los archivos <code>txt</code> y
+<code>pdf</code> que contienen sus valores y sus gráficos.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">dir.exists</span>(<span class="st">&quot;resultados&quot;</span>)) <span class="fu">dir.create</span>(<span class="st">&quot;resultados&quot;</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">40</span>) {</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>  datos <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">20</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>  </span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a> </span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>  <span class="fu">write</span>(datos, <span class="at">file =</span> <span class="fu">paste0</span>(<span class="st">&quot;resultados/archivo_&quot;</span>, i, <span class="st">&quot;.txt&quot;</span>), <span class="at">ncolumns =</span> <span class="dv">1</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>  </span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a> </span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>  <span class="fu">pdf</span>(<span class="fu">paste0</span>(<span class="st">&quot;resultados/grafico_&quot;</span>, i, <span class="st">&quot;.pdf&quot;</span>))</span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>  </span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a>  <span class="fu">plot</span>(datos, <span class="at">type =</span> <span class="st">&quot;o&quot;</span>, <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>, </span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>       <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">&quot;Gráfico Aleatorio&quot;</span>, i), </span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">&quot;Índice&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Valor&quot;</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a>  </span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a>  <span class="fu">dev.off</span>()</span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<div id="definimos-el-directorio-para-mantener-ordenados-los-archivos" class="section level1">
-<h1>Definimos el directorio para mantener ordenados los archivos</h1>
-<p>if(!dir.exists(“resultados”)) dir.create(“resultados”)</p>
 </div>
-<div id="iniciamos-el-bucle-para-generar-los-40-archivos" class="section level1">
-<h1>Iniciamos el bucle para generar los 40 archivos</h1>
-<p>for (i in 1:40) { # Generamos 20 variables aleatorias con
-distribución uniforme datos &lt;- runif(20)</p>
-<p># 1. Escribir el archivo .txt write(datos, file =
-paste0(“resultados/archivo_”, i, “.txt”), ncolumns = 1)</p>
-<p># 2. Generar el archivo .pdf pdf(paste0(“resultados/grafico_”, i,
-“.pdf”))</p>
-<p># Graficamos los datos en el dispositivo PDF abierto plot(datos, type
-= “o”, col = “darkgreen”, main = paste(“Gráfico Aleatorio”, i), xlab =
-“Índice”, ylab = “Valor”)</p>
-<p># Cerramos el dispositivo PDF para finalizar el archivo dev.off()
-}</p>
 <div id="referencias-adicionales" class="section level2">
 <h2>Referencias adicionales</h2>
 <ul>
 <li>Puede consultar cualquier libro de R.</li>
 <li>Se puede consultar las presentaciones previas.</li>
 </ul>
-</div>
 </div>
 </article>
 </div>
